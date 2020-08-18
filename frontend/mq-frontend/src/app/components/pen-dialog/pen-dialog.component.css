@@ -1,0 +1,35 @@
+.img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    width:550px;
+    height:400px;
+}
+
+#pointcost {
+    text-align: center;
+    font-size: 150%;
+    color:green;
+    height: 30px;
+}
+#costdesc {
+    text-align: center;
+}
+
+#closebtn {
+    width:49%;
+    float:left;
+}
+
+#cartbtn {
+    width:49%;
+    float:right;
+}
+
+mat-dialog-actions {
+    border-radius: 25px;
+    background: linear-gradient(to left, #ece9e6, #ffffff); 
+    margin-bottom:10px;
+    padding-right: 8px;
+}

@@ -1,0 +1,34 @@
+.pen-card {
+    max-width: 275px;
+    max-height:235px;
+    background: #2193b0; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2193b0, #6dd5ed); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2193b0, #6dd5ed); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    display:  inline-block;
+    border-radius: 15px;
+
+}
+
+#detailsdialog {
+    padding-top: 3px;
+    font-size: 115%;
+    height:35px;
+    text-align:center;
+    width: 100%;
+    background: #ffffff;
+    text-size-adjust: 5px;
+    border-radius: 25px;
+    box-shadow: 2px 5px #9c1006;
+}
+
+.img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    width:250px;
+    height:175px;
+}
+#test {
+    font-family: "Great Vibes", cursive;
+}

@@ -1,0 +1,31 @@
+<h1 id="test">Shop Page</h1>
+
+<br />
+<div *ngFor = "let pen of pens">
+</div>
+<mat-grid-list cols="3">
+    <mat-grid-tile *ngFor = "let pen of pens">
+        <mat-card class="pen-card">
+            <mat-card-header>
+                <mat-card-title>{{ pen.name }} </mat-card-title>
+            </mat-card-header>
+            <img mat-card-image class="img" src="{{pen.image}}">
+            <mat-card-content>
+                <mat-card-actions>
+                    <button id="detailsdialog" (click)="openDialog( pen.pId )" mat-button>View Details</button>
+                </mat-card-actions>
+            </mat-card-content>
+        </mat-card>
+
+    </mat-grid-tile>
+</mat-grid-list>
+
+
+<!-- 
+<tr *ngFor = "let pen of pens">
+    <td> {{ pen.id }} </td>
+    <td>{{ pen.description }}</td>
+    <td> {{ pen.name }}</td>
+    <td> {{ pen.cost }}</td>
+    <td> {{ pen.image }}</td>
+</tr> -->
