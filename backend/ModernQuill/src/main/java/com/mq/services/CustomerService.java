@@ -5,5 +5,6 @@ import com.mq.entities.Customer;
 public interface CustomerService {
 
 	Customer getCustomerById(int id);
-	Customer getCustomerByEmail(String email);
+	Customer getCustomerByEmailAndPassword(String email, String password);
+	Customer updateCustomer(Customer customer);
 }

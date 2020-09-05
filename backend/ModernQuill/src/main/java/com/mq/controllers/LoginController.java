@@ -21,21 +21,6 @@ public class LoginController {
 	@Autowired
 	CustomerService cs;
 
-	@RequestMapping(value="/login",method= RequestMethod.POST)
-	public Customer login(@RequestBody(required = true) Customer  customer) {
-		Customer cust;
-		
-		
-		try {
-			cust = cs.getCustomerByEmail(customer.getEmail());
-			
-			if(cust.getPassword().equals(customer.getPassword())) {
-				return cust;
-			}	
-		}catch(Exception e) {
-			cust = null;
-		}
-		return cust;
-	}
+	
 	
 }

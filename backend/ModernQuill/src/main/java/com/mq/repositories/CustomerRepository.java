@@ -10,5 +10,5 @@ import com.mq.entities.Customer;
 @Repository 
 public interface CustomerRepository extends CrudRepository<Customer, Integer> {
 	
-	Customer findByEmail(String email);
+	Customer findByEmailAndPassword(String email, String password);
 }

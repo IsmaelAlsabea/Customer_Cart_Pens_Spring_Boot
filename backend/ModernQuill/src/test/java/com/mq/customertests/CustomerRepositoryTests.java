@@ -26,8 +26,8 @@ class CustomerRepositoryTests {
 	}
 	
 	@Test
-	void getCustomerByEmail() {
-		Customer c = cr.findByEmail("penguy37@gmail.com");
+	void getCustomerByEmailAndPassword() {
+		Customer c = cr.findByEmailAndPassword("penguy37@gmail.com", "pen123");
 		Assertions.assertEquals(1, c.getcId());
 	}
 

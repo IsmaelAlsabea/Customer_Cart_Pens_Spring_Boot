@@ -1,4 +1,4 @@
-Feature: submit a new order
+Feature: Cart Interactions
 
 
 	Background: Customer added stuff to cart and wants to buy them.
@@ -9,18 +9,24 @@ Feature: submit a new order
 		When the guest clicks login
 		Then the guest should be on shop page
 		
-		
-		Given the guest is on the shop page 
+		When the guest clicks on view details of an image
+		Then a pen dialogue pops up 
+		When the guest sets the pen quantity
 		When  the guest clicks add to cart
-		Then  a pop-up box about the pen will appear
-	
-		Given the guest is in the pop-up box of a pen
-		When the guest sets the quantity and click add to cart
-		Then the pen is added to the cart
-		
-		
+		Then  a confirmation pop up will appear
+
 
 	Scenario: Submit order from cart page
 		Given the guest is on the cart page
-		When the guest clicks submit cart order
-		Then confirmation of order is displayed
+		When the guest clicks confirm order to open confirm order dialog
+		Then Another confirmation order dialog opens
+		When the customer clicks confirm order 
+		
+		
+	Scenario: add pens to cart, and clear the cart
+		
+		Given the guest is on the cart page
+		When the guest clicks clear cart
+		Then cart gets cleared 
+		
+		

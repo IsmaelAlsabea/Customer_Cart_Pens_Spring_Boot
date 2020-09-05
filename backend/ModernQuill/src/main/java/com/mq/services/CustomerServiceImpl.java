@@ -20,7 +20,12 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 	
 	@Override
-	public Customer getCustomerByEmail(String email) {
-		return cr.findByEmail(email);
+	public Customer getCustomerByEmailAndPassword(String email, String password) {
+		return cr.findByEmailAndPassword(email, password);
+	}
+
+	@Override
+	public Customer updateCustomer(Customer customer) {
+		return cr.save(customer);
 	}
 }

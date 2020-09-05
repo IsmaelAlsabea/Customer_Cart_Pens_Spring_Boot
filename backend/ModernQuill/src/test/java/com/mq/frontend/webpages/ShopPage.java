@@ -14,7 +14,32 @@ public class ShopPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(id= "test")
+	//shop page
+	
+	@FindBy(id= "shopPageHeader")
 	public WebElement pageheader;
+	
+	@FindBy(id = "1")
+	public WebElement penDialogButton;
+	
+	//pen-dialog
+	
+	@FindBy(id="penDialogueHeader")
+	public WebElement penDialogueHeader;
+	
+	@FindBy(id= "quantityInput")
+	public WebElement quantityInputField;
+	
+	@FindBy(id="cartbtn")
+	public WebElement addToCartBtn;
+	
+	@FindBy( id="penAddedToCart")
+	public WebElement penAddedAlert;
+	
+	
+	
+	
+	
+	
 	
 }

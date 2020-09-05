@@ -26,25 +26,22 @@ public class Order {
 	@Column (name = "order_date")
 	private String orderDate;
 
+	@Column (name= "order_total")
+	private int orderTotal;
 
 	public Order() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-
-
-
-	public Order(int oId, int cartId, int cId, String orderDate) {
+	public Order(int oId, int cartId, int cId, String orderDate, int orderTotal) {
 		super();
 		this.oId = oId;
 		this.cartId = cartId;
 		this.cId = cId;
 		this.orderDate = orderDate;
+		this.orderTotal = orderTotal;
 	}
-
-
-
 
 	public int getoId() {
 		return oId;
@@ -86,10 +83,29 @@ public class Order {
 	}
 
 
+
+
+	public int getOrderTotal() {
+		return orderTotal;
+	}
+
+
+
+
+	public void setOrderTotal(int orderTotal) {
+		this.orderTotal = orderTotal;
+	}
+
+
+
+
 	@Override
 	public String toString() {
-		return "Order [oId=" + oId + ", cartId=" + cartId + ", cId=" + cId + ", orderDate=" + orderDate + "]";
+		return "Order [oId=" + oId + ", cartId=" + cartId + ", cId=" + cId + ", orderDate=" + orderDate
+				+ ", orderTotal=" + orderTotal + "]";
 	}
+
+
 
 
 

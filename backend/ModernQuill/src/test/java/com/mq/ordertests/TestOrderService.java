@@ -39,7 +39,7 @@ class TestOrderService {
 		SimpleDateFormat dateTimeInCST = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		//Setting the time zone
 		dateTimeInCST.setTimeZone(TimeZone.getTimeZone("CST"));
-		Order or= new Order (0, 10, 2, dateTimeInCST.format(new Date()) );
+		Order or= new Order (0, 10, 2, dateTimeInCST.format(new Date()), 1000 );
 		
 		Assertions.assertNotEquals(0, oServ.createOrder(or).getoId());
 		System.out.println();
@@ -47,7 +47,7 @@ class TestOrderService {
 
 	
 	@ParameterizedTest
-	@CsvSource({"1, 2"})
+	@CsvSource({"1, 3"})
 	void testFindBycId(int id, int size) {
 		
 		Set<Order> orders = oServ.getAllOrdersByCustomerId(1);
