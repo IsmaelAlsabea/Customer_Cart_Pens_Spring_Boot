@@ -24,6 +24,8 @@ export class ShopPageComponent implements OnInit {
   penQuantity: number;
   showPopUp: boolean=false;
 
+  showConfPopUp: boolean=false;
+
 
   constructor(private penService:PenService, 
               private pcis:PersistentCustomerInfoService,
@@ -53,11 +55,6 @@ export class ShopPageComponent implements OnInit {
     }
   };
 
-  // openDialog(penId:number) {
-  //   const dialogConfig = new MatDialogConfig();
-  //   dialogConfig.data = penId;
-  //   // this.matDialog.open(PenDialogComponent, dialogConfig);
-  // }
 
 
   custLoggedIn(){
@@ -83,12 +80,17 @@ export class ShopPageComponent implements OnInit {
       this.penQuantity = 1;
     }
     this.stc.addToCourier(new Cart(cartId, numcId, this.selectedPen.pId, this.penQuantity));
-    window.confirm("pen is added to the cart");
+    
+    this.showConfPopUp=true;
   }
 
 
   closePopUp():void{
     this.showPopUp=false;
+  }
+
+  closeConfPopUp(){
+    this.showConfPopUp=false;
   }
 
 }

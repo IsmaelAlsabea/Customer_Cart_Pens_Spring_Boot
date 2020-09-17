@@ -103,8 +103,6 @@
 }
 
 
-/* pop up dialog */
-
 .popup_img{
     height: 44% ;
     width: 37%;
@@ -124,3 +122,23 @@
     color: darkmagenta;
 }
 
+/* confirmation popup */
+
+.confPop{
+    display: flex;
+    position: absolute;
+    cursor: pointer;
+    width: 100% ;
+    bottom: 5%;
+    height: 4%;
+    flex-direction: column;
+    align-items: center;
+    font-size: large;
+    font-weight: bold;
+    background-color: mediumseagreen;
+    color: white;
+}
+
+.confText{
+    margin-top: 0.5%;
+}

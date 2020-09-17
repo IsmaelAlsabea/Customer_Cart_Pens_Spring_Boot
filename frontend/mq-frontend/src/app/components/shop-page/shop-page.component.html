@@ -51,9 +51,10 @@
             <p  id="pointcost"> {{ selectedPen.cost | currency }} </p>
             <button class="cartbtn" id="cartbtn" mat-button  (click)="addPenToCart(); closePopUp()">Add To Cart</button>
         </span>
-
-       
-        
     </div>
-    
 </div>
+
+
+<a *ngIf="showConfPopUp" class="confPop" (click)='closeConfPopUp()'>
+    <p class="confText">shop list is successfully added to the cart</p>
+</a>
