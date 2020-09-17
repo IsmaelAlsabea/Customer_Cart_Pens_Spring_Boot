@@ -26,10 +26,16 @@
     width:49%;
     float:right;
 }
-
 mat-dialog-actions {
     border-radius: 25px;
-    background: linear-gradient(to left, #ece9e6, #ffffff); 
+    background: linear-gradient(to left, black, gray); 
     margin-bottom:10px;
     padding-right: 8px;
+}
+
+#quantity-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }

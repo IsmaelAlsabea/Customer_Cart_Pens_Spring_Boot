@@ -1,1 +1,42 @@
-<p>cart-page works!</p>
+<app-navigtation-bar></app-navigtation-bar>
+
+<h1 id="cartPageHeader">Your cart:</h1>
+
+<mat-grid-list cols="3">
+    <mat-grid-tile *ngFor = "let cart of carts">
+        <mat-card class="pen-card">
+            <mat-card-header>
+                <mat-card-title>{{ cart.pen.name }} </mat-card-title>
+            </mat-card-header>
+            <img mat-card-image class="img" src="{{cart.pen.image}}">
+            <mat-card-content>
+                Pen Description: {{ cart.pen.description }} <br />
+                Quantity Ordered: {{ cart.quantity }} <br />
+                Individual Pen Cost (Quantity x $Point Cost):
+                <br />
+
+                <div class="pointcost" > 
+                    {{ (cart.quantity * cart.pen.cost) | currency }}
+                </div>
+                
+
+            </mat-card-content>
+        </mat-card>
+
+    </mat-grid-tile>
+</mat-grid-list>
+
+<br />
+<div id="carttotal">
+    <p id="carttotaltext">
+        Total Point Cost:
+        <span class="pointcost">
+            <span id="finalCost">
+            {{  totalCost | currency}}
+            </span>
+            <button mat-raised-button color="Accent" id="openConfirmOrderDialog" (click)="openDialog()">Confirm Order</button>
+            - OR -
+            <button mat-raised-button color="Accent" id="clearCart" (click)="clearCart()">Clear Cart</button>
+        </span>
+    </p>
+</div>

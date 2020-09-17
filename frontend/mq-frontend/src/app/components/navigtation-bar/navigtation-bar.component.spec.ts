@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PenDialogComponent } from './pen-dialog.component';
+import { NavigtationBarComponent } from './navigtation-bar.component';
 
-describe('PenDialogComponent', () => {
-  let component: PenDialogComponent;
-  let fixture: ComponentFixture<PenDialogComponent>;
+describe('NavigtationBarComponent', () => {
+  let component: NavigtationBarComponent;
+  let fixture: ComponentFixture<NavigtationBarComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PenDialogComponent ]
+      declarations: [ NavigtationBarComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PenDialogComponent);
+    fixture = TestBed.createComponent(NavigtationBarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

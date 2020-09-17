@@ -1,34 +1,126 @@
 .pen-card {
-    max-width: 275px;
-    max-height:235px;
+    width: 375px;
+    height: 280px;
     background: #2193b0; /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #2193b0, #6dd5ed); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #2193b0, #6dd5ed); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, hsl(192, 68%, 41%), #6dd5ed); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: black;
+    text-align: center;
     display:  inline-block;
+    border: 2px solid black;
     border-radius: 15px;
 
 }
 
-#detailsdialog {
-    padding-top: 3px;
+.details {
+    display:block;
+    position: relative;
     font-size: 115%;
     height:35px;
     text-align:center;
-    width: 100%;
-    background: #ffffff;
+    width: 300px;
+    color:black;
+    background: linear-gradient(to left, white, grey);
     text-size-adjust: 5px;
     border-radius: 25px;
     box-shadow: 2px 5px #9c1006;
 }
 
-.img {
+ .shopImg{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
-    width:250px;
-    height:175px;
+    border: 2px solid black;
+    width:285px;
+    height:200px;
 }
-#test {
-    font-family: "Great Vibes", cursive;
+.header { color: skyblue; 
+    font-family: "Great Vibes", cursive; 
+    font-size: 65px; line-height: 160px; 
+    font-weight: normal; 
+    text-align: center; 
+    text-shadow: 0 1px 1px #fff; 
 }
+
+.btnforpen {
+    position: absolute;
+    margin-top: 300px;
+}
+
+
+
+
+/* hide popup */
+.popup {
+    resize: both;
+    overflow: auto;
+    top: 15%;
+    bottom: 8%;
+    left: 25%;
+    right: 25%;
+    background: mediumaquamarine;
+    border-radius: 20px;
+    position: absolute;
+    border: 5px solid black;
+}
+
+.flex-popUp-body{
+    display: flex;
+    flex-direction:column;
+    line-height: 300%;
+    margin-top: 2%;
+    align-items: center;
+    color: darkmagenta;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: large;
+    font-weight: bold;
+}
+
+
+.popup_header {
+    position: absolute;
+    top: 1%;
+    left: 1%;
+    margin: 5px;
+    font-weight: bold;
+    color: darkmagenta;
+}
+
+.close {
+    position: absolute;
+    top: 1%;
+    right: 1%;
+    margin: 5px;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+
+.close:hover {
+    color: darkmagenta;
+    cursor: pointer;
+}
+
+
+/* pop up dialog */
+
+.popup_img{
+    height: 44% ;
+    width: 37%;
+    margin-top: 5%;
+    margin-left: 30%;
+}
+
+.quantity-form{
+    width: 25%;
+}
+
+.cartbtn {
+    position: absolute;
+    width:49%;
+    bottom: 3%;
+    background-color: white;
+    color: darkmagenta;
+}
+

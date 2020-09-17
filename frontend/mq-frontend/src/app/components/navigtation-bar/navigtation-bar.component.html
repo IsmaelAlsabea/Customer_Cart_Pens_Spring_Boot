@@ -1,0 +1,42 @@
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<div *ngIf="custLoggedIn()">
+    <mat-tab-group id="nav-bar">
+        <mat-tab>
+            <ng-template mat-tab-label>
+                <a mat-button [routerLink]="'/shop'" id="shop" class="tab-icons"> <mat-icon>home</mat-icon>Shop </a>
+            </ng-template>
+        </mat-tab>
+        
+        <mat-tab>
+            <ng-template mat-tab-label>
+                <a mat-button [routerLink]="'/cart'" id="cart" class="tab-icons"><mat-icon >shopping_cart </mat-icon>Cart </a>
+            </ng-template>
+        </mat-tab>
+
+        <mat-tab>
+            <ng-template mat-tab-label>
+                <a mat-button [routerLink]="'/orders'" id="orders" class="tab-icons"><mat-icon >gradient </mat-icon>Orders </a>
+            </ng-template>
+        </mat-tab>
+        
+        <mat-tab> 
+            <ng-template mat-tab-label>
+                <a mat-button id="logout" (click)="logout()" class="tab-icons"> <mat-icon>exit_to_app</mat-icon>Logout </a>
+            </ng-template>
+        </mat-tab>
+
+        <mat-tab> 
+            <ng-template mat-tab-label>
+            <div class="tab-icons">
+                Your available points: {{ customerPoints }}
+            </div>
+            </ng-template>
+        </mat-tab>
+    </mat-tab-group>
+</div>
+
+
+
+<br />

@@ -1,31 +1,59 @@
-<h1 id="test">Shop Page</h1>
 
-<br />
-<div *ngFor = "let pen of pens">
+<app-navigtation-bar></app-navigtation-bar>
+<h1 id="shopPageHeader" class="header">Shop Page</h1>
+
+<div id="sorter">
+    <mat-form-field appearance="fill">
+        <mat-label>Select an option</mat-label>
+        <mat-select [(value)]="selected" (valueChange)="displayPens()" >
+            <mat-option id="bestSellers" value="best sellers" >Best Sellers</mat-option>
+            <mat-option id="asc" value="ascending" >Price: Low to High</mat-option>
+            <mat-option id="desc" value="descending">Price: High to Low</mat-option>
+        </mat-select>
+    </mat-form-field>            
 </div>
+
+
 <mat-grid-list cols="3">
     <mat-grid-tile *ngFor = "let pen of pens">
         <mat-card class="pen-card">
-            <mat-card-header>
+            <mat-card-header class="penCardHeader">
                 <mat-card-title>{{ pen.name }} </mat-card-title>
             </mat-card-header>
-            <img mat-card-image class="img" src="{{pen.image}}">
-            <mat-card-content>
-                <mat-card-actions>
-                    <button id="detailsdialog" (click)="openDialog( pen.pId )" mat-button>View Details</button>
-                </mat-card-actions>
-            </mat-card-content>
+            <img mat-card-image class="shopImg" src="{{pen.image}}">
         </mat-card>
-
+        <div class="btnforpen">
+            <button class="details" [id]="pen.pId" (click)="openDialog(pen.pId)" mat-button>View Details</button>
+        </div>
     </mat-grid-tile>
 </mat-grid-list>
 
 
-<!-- 
-<tr *ngFor = "let pen of pens">
-    <td> {{ pen.id }} </td>
-    <td>{{ pen.description }}</td>
-    <td> {{ pen.name }}</td>
-    <td> {{ pen.cost }}</td>
-    <td> {{ pen.image }}</td>
-</tr> -->
+
+
+<div *ngIf='showPopUp'>
+    <div  class="popup" id="cont">
+        <h2 class="popup_header" id='penDialogueHeader' >{{selectedPen.name}}</h2>
+        <a class="close" id="closebtn" (click)= "closePopUp()" >X</a>
+        <img class="popup_img" src="{{ selectedPen.image }}"/>
+        
+        <span class="flex-popUp-body">
+            
+            <p class="pen-desc"> Description: {{ selectedPen.description }} </p>
+            
+            <p id="cost-desc">All cost values are in PSD (Point standard dollars)</p>
+            
+            <mat-form-field class="quantity-form">
+                <mat-label>Enter a quantity (Will default to 1)</mat-label>
+                <input id="quantityInput" matInput required min="1" [(ngModel)]="penQuantity" type="number" />
+            </mat-form-field>
+            
+            <p  id="pointcost"> {{ selectedPen.cost | currency }} </p>
+            <button class="cartbtn" id="cartbtn" mat-button  (click)="addPenToCart(); closePopUp()">Add To Cart</button>
+        </span>
+
+       
+        
+    </div>
+    
+</div>

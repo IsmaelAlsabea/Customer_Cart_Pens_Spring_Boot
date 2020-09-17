@@ -1,14 +1,19 @@
 export class Customer{
-    id:number;
-    firstName:string;
-    lastName:string;
+    cId:number;
+    fname:string;
+    lname:string;
     email:string;
     password:string;
     points:number;
     address:string;
 
-    constructor(email:string, password:string){
+    constructor(cId:number, fname:string, lname:string, points:number, address:string, email:string, password:string){
         this.email = email;
         this.password = password;
+        this.cId = cId;
+        this.fname = fname;
+        this.lname = lname;
+        this.points = points;
+        this.address = address;
     }
 }

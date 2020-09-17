@@ -1,20 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Document</title>
+
     <link href='https://fonts.googleapis.com/css?family=Great Vibes' rel='stylesheet'>
 </head>
-<body>
-    <h1 style="text-align:center;">Modern Quill</h1>
+    <body>
+        <h1 id= "loginPageHeader" style="text-align:center;">Modern Quill</h1>
+        
+        <form class="example-form" style = "display: fixed; margin: auto;" (keyup.enter)="loginCust()">
+            <mat-form-field class="example-full-width">
+                <mat-label>Email</mat-label>
+                <input type = "text" id = "usernameInput" matInput name="username" [(ngModel)]="userField">
+            </mat-form-field>
+            <br />
+            <mat-form-field class="example-full-width">
+                <mat-label>Password</mat-label>
+                <input type = "password"  id="passwordInput"  placeholder = "Password"  matInput name="password" [(ngModel)]="passField"> 
+            </mat-form-field>
+        </form>
+        
+        <button mat-raised-button color="accent" (click)="loginCust()" id = "loginButton" style = "display: block; margin: auto;"> Login </button>
 
-    <div class="inputdiv">
-        <input type = "text" id = "usernameInput" placeholder = "userName"  [(ngModel)]="userField"> 
-        <input type = "password" id = "passwordInput" placeholder = "Password"  [(ngModel)]="passField"> 
-        <div class = "slider">
-        <h2>Penthusiasm Level &#8595;</h2>
-        <mat-slider  thumbLabel tickInterval="1" min="1" max="10" step="1" value="1"></mat-slider>
+
+        <div *ngIf='showPopUp'>
+            <div class="popup"  id="wrongCredentialsPopup">
+                <a  class="close" (click)="closePopUp()"  href="#">&times;</a>
+                <h1 class="content">
+                    Thank you for popping me out, but your credentials are wrong, no pens for you.
+                </h1>
+            </div>
         </div>
-        <button (click)="loginCust()" id = "loginButton" style = "display: block; margin: auto;"> Login </button>
-    </div>
-</body>
+
+
+
+
+
+
+
+    </body>
 </html>

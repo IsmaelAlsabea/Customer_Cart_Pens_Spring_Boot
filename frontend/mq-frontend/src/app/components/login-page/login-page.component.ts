@@ -1,46 +1,53 @@
-import { Component, OnInit } from '@angular/core';
-import {Customer} from '../../models/customer';
-import {LoginService} from 'src/app/services/login.service';
+import { Component, OnInit} from '@angular/core';
+import {CustomerService} from 'src/app/services/customer.service';
+import {PersistentCustomerInfoService} from 'src/app/services/persistent-customer-info.service'; 
 import { Router } from '@angular/router';
 
 @Component({
 
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
-  styleUrls: ['./login-page.component.css']
-})
+  styleUrls: ['./login-page.component.css'] 
+
+  // , '../../common/css/popup.css'
+  })
 export class LoginPageComponent implements OnInit {
 
-  constructor(private loginService:LoginService, private router:Router) { }
+  constructor(private customerService:CustomerService, 
+              private router:Router, 
+              private pcis: PersistentCustomerInfoService) { }
 
   userField:string;
   passField:string;
+
+  //popup field for ngIf
+  showPopUp: boolean=false;
 
   ngOnInit(): void {
   }
 
   async loginCust(){
-    console.log(this.userField);
+    let dto = {email: this.userField, password: this.passField};
 
-    let cust = new Customer(this.userField,this.passField);
-    let customer = await this.loginService.loginUser(cust);
-    // console.log(customer);
+    let customer = await this.customerService.loginUser(dto);
 
     if (customer === null){
-      alert("user not found")
-      this.router.navigateByUrl("/login");
+
+      this.showPopUp=true;
       this.userField="";
       this.passField="";
-      this.router.navigateByUrl("/login");
       
     }
     else{
+      this.pcis.setCustomer(customer);
       this.router.navigateByUrl("/shop");
-      this.loginService.setCustomer(customer);
-      console.log(this.loginService.currCust)
+      
     }
 
+  }
 
+  closePopUp():void{
+    this.showPopUp=false;
   }
 
 }

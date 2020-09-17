@@ -1,0 +1,16 @@
+<app-navigtation-bar></app-navigtation-bar>
+
+<h1 id="header">Orders Summary</h1>
+
+<h2 id="firstNamePlusLastName" style="text-align: center;">{{curCustomer.fname}} {{curCustomer.lname}}</h2>
+<h4 style="text-align: center;"> points:{{curCustomer.points}}</h4>
+
+<table>
+    <thead><th>Order Date</th><th>Order Id</th><th>Total Order Points</th><th>Status</th></thead>
+    <tr  *ngFor = "let order of orders">
+        <td>{{order.orderDate}}</td>
+        <td>{{order.oId}}</td>
+        <td>{{order.orderTotal}}</td>
+        <td>Order Submitted</td>
+    </tr>
+</table>

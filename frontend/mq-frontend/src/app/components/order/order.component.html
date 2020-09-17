@@ -1,0 +1,11 @@
+<h2 id="placeOrderDialog" mat-dialog-title>Order Confirmation</h2>
+<div id="cont">
+    <p>
+        Just hit the confirm order button to place your order of pens!
+        <br />
+        We already have all of your personal information (Full name, credit card number, address, SSN, etc.),
+        so feel free to place an order with ease!
+    </p>
+
+    <button mat-raised-button color="Accent" id="placeOrder" [mat-dialog-close]="true" (click)="placeOrder()">Confirm Order</button>
+</div>
