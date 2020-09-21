@@ -16,15 +16,12 @@
 
 <mat-grid-list cols="3">
     <mat-grid-tile *ngFor = "let pen of pens">
-        <mat-card class="pen-card">
+        <mat-card class="pen-card" [id]=pen.pId (click)=openDialog(pen.pId) >
             <mat-card-header class="penCardHeader">
                 <mat-card-title>{{ pen.name }} </mat-card-title>
             </mat-card-header>
             <img mat-card-image class="shopImg" src="{{pen.image}}">
         </mat-card>
-        <div class="btnforpen">
-            <button class="details" [id]="pen.pId" (click)="openDialog(pen.pId)" mat-button>View Details</button>
-        </div>
     </mat-grid-tile>
 </mat-grid-list>
 

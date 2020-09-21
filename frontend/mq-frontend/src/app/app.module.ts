@@ -6,7 +6,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
-import { MatSliderModule } from '@angular/material/slider';
+import {MatSliderModule } from '@angular/material/slider';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatTabsModule} from '@angular/material/tabs';
@@ -23,14 +23,11 @@ import { LoginPageComponent } from '../app/components/login-page/login-page.comp
 import { ShopPageComponent } from '../app/components/shop-page/shop-page.component';
 import { CartPageComponent } from '../app/components/cart-page/cart-page.component';
 import { PenService } from 'src/app/services/pen.service';
-// import { PenDialogComponent } from './components/pen-dialog/pen-dialog.component';
 
 import { DatePipe } from '@angular/common';
 import { NavigtationBarComponent } from './components/navigtation-bar/navigtation-bar.component';
-import { OrderComponent } from './components/order/order.component';
 import { OrderPageComponent } from './components/order-page/order-page.component';
 import { ShopToCartService } from 'src/app/services/shop-to-cart.service';
-import {PenDialogToShopService} from 'src/app/services/pen-dialog-to-shop.service';
 import {CustomerService} from 'src/app/services/customer.service';
 import {PersistentCustomerInfoService} from 'src/app/services/persistent-customer-info.service';
 
@@ -40,11 +37,8 @@ import {PersistentCustomerInfoService} from 'src/app/services/persistent-custome
     LoginPageComponent,
     ShopPageComponent,
     CartPageComponent,
-    // PenDialogComponent,
     NavigtationBarComponent,
-    OrderComponent,
-    OrderPageComponent,
-  
+    OrderPageComponent
   ],
   imports: [
     BrowserModule,
@@ -66,7 +60,7 @@ import {PersistentCustomerInfoService} from 'src/app/services/persistent-custome
     MatSelectModule
   ],
   providers: [ PenService , DatePipe, ShopToCartService, 
-    PenDialogToShopService, CustomerService, PersistentCustomerInfoService],
+     CustomerService, PersistentCustomerInfoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

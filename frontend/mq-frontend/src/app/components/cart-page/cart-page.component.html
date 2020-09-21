@@ -15,11 +15,7 @@
                 Individual Pen Cost (Quantity x $Point Cost):
                 <br />
 
-                <div class="pointcost" > 
-                    {{ (cart.quantity * cart.pen.cost) | currency }}
-                </div>
-                
-
+                <div class="pointcost" > {{ (cart.quantity * cart.pen.cost) | currency }} </div>
             </mat-card-content>
         </mat-card>
 
@@ -34,9 +30,31 @@
             <span id="finalCost">
             {{  totalCost | currency}}
             </span>
-            <button mat-raised-button color="Accent" id="openConfirmOrderDialog" (click)="openDialog()">Confirm Order</button>
+            <button mat-raised-button color="Accent" id="openConfirmOrderDialog" (click)="openDialog()">Place Order</button>
             - OR -
             <button mat-raised-button color="Accent" id="clearCart" (click)="clearCart()">Clear Cart</button>
         </span>
     </p>
 </div>
+
+
+
+<div class="popup" id="cont" *ngIf='popUpBool'>
+    <h2  class="popup_header" id="placeOrderDialog" >Order Confirmation</h2>
+    <a class="close" id="closebtn" (click)= "closeDialog()" >X</a>
+    <p class="flex-popUp-content"> Are you sure you want to place this order? </p>    
+    <button mat-raised-button class="cartbtn" id="placeOrder" (click)="placeOrder()">Confirm Order</button>
+</div>
+
+
+<a *ngIf="showConfPopUp" class="confPop" (click)='closeConfPopUp()'>
+    <p class="alertText">Order is Successfully placed</p>
+</a>
+
+<a *ngIf="showNoItemInCartPopUp" class="noItemInCart" (click)='closeNoItemPopUp()'>
+    <p class="alertText">No Item in Cart</p>
+</a>
+
+<a *ngIf="showInsuffecientPointsPopUp" class="insufficientPoints" (click)='closeInsufficientPopUp()'>
+    <p class="alertText">You do not have enough points to place this order</p>
+</a>
